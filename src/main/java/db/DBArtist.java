@@ -96,14 +96,10 @@ public class DBArtist {
     public static void delete(int id) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction transaction = null;
-        Album album = null;
+        Artist artist = getArtistById(id);
         try {
             transaction = session.beginTransaction();
-            String queryString = "from Artist where id = :id";
-            Query query = session.createQuery(queryString);
-            query.setInteger("id", id);
-            album = (Album) query.uniqueResult();
-            session.delete(album);
+            session.delete(artist);
             transaction.commit();
         } catch (HibernateException e) {
             transaction.rollback();

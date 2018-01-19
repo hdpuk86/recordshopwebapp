@@ -1,0 +1,17 @@
+<h2>Welcome to wee Al's record shop</h2>
+<a href="/artists" class="button center">Artists</a>
+<h3>Current Stock</h3>
+<table>
+   <tr>
+       <th>Title</th>
+       <th>Artist</th>
+       <th>Quantity</th>
+   </tr>
+    #foreach($album in $stock)
+    <tr>
+        <td>$album.getTitle()</td>
+        <td>$album.getArtist().getName()</td>
+        <td>$album.getQuantity()</td>
+    </tr>
+    #end
+</table>

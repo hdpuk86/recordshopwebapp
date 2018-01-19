@@ -10,15 +10,12 @@ public class Main {
         DBAlbum.deleteAll();
         DBArtist.deleteAll();
         Artist artist1 = new Artist("AC/DC");
-
         DBArtist.save(artist1);
 
         Album album = new Album("Back in black", artist1,3);
         DBAlbum.save(album);
-
-
         Album album2 = new Album("Highway to hell", artist1,5);
-
+        DBAlbum.save(album2);
 
         Artist artist2 = new Artist("Metallica");
         DBArtist.save(artist2);
@@ -27,7 +24,7 @@ public class Main {
         DBAlbum.save(album3);
 
         Album album4 = new Album("Reload", artist2, 3);
-
+        DBAlbum.save(album4);
 
     }
 }
